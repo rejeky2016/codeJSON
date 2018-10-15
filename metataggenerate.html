@@ -1,4 +1,66 @@
-<link href='https://cdn.staticaly.com/gh/Fixlez/media/edf4b506/CodeJSON/mtg-style.css' rel='stylesheet' type='text/css'/>
+<style>
+  body {
+  width: 95%;
+  max-width: 800px;
+  font-family: tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 0 10px 20px 10px;
+  margin: 0 auto 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.notes {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto 40px auto;
+}
+
+code {
+  background-color: #eee;
+  padding: 0 3px 0 3px;
+}
+
+table {
+  margin: 0 0 30px 0;
+}
+
+label {
+    /* font-weight: bold; */
+    font: normal normal 12px Allerta Stencil;
+}
+
+input {
+  width: 400px;
+    padding: 2px;
+    margin: 2px 10px 0 0;
+    color: #b6c1c1;
+    background: #2e3f56
+}
+
+td:first-child {
+  text-align: right;
+  padding: 0 5px 0 0;
+}
+
+tr.padding td {
+  padding-bottom: 30px;
+}
+
+textarea {
+  display: block;
+  width: 94%;
+  height: 200px;
+  font-family: monospace;
+  white-space: pre;
+  margin: 0 0 10px 0;
+    color: #b6c1c1;
+    background: #2e3f56
+}
+</style>
 
 
 <h1 style="font-size: xx-large;">Social Media Sharing</h1>
@@ -48,4 +110,40 @@
 <textarea id="meta-tags"></textarea>
 <button>Copy to Clipboard</button>
 
-<script src='https://cdn.staticaly.com/gh/Fixlez/media/3d9dc575/CodeJSON/mtg.js' type='text/javascript'/></script>
+<script>
+jQuery('table').on('input', function() {
+  title = jQuery("#mt-title").val();
+  description = jQuery("#mt-description").val();
+  pageURL = jQuery("#mt-pageurl").val();
+  imageURL = jQuery("#mt-imageurl").val();
+  site = jQuery("#mt-site").val();
+  alt = jQuery("#mt-alt").val();
+  appID = jQuery("#mt-appid").val();
+  username = jQuery("#mt-username").val();
+  
+  part0 = '<title>' + title + '</title>\n';
+  part1 = '<meta name="description" content="' + description + '">\n';
+  part2 = '<meta property="og:title" content="' + title + '">\n';
+  part3 = '<meta property="og:description" content="' + description + '">\n';
+  part4 = '<meta property="og:url" content="' + pageURL + '">\n';
+  part5 = '<meta property="og:image" content="' + imageURL + '">\n';
+  
+  part6 = '<meta property="og:site_name" content="' + site + '">\n';
+  part7 = '<meta property="fb:app_id" content="' + appID + '">\n';
+  part8 = '<meta name="twitter:card" content="summary_large_image">\n';
+  part9 = '<meta name="twitter:image:alt" content="' + alt + '">\n';
+  part10 = '<meta name="twitter:site" content="' + username + '">\n';
+  
+  if (site == "") { part6 = "" };
+  if (appID == "") { part7 = "" };
+  if (alt == "") { part9 = "" };
+  if (username == "") { part10 = "" };
+
+  jQuery("textarea").html(part0 + part1 + part2 + part3 + part4 + part5 + part6 + part7 + part8 + part9 + part10);
+});
+
+jQuery('button').on('click', function() {
+  document.querySelector("#meta-tags").select();
+  document.execCommand('copy');
+});
+</script>
