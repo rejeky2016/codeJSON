@@ -1,0 +1,51 @@
+<link href='https://cdn.staticaly.com/gh/Fixlez/media/edf4b506/CodeJSON/mtg-style.css' rel='stylesheet' type='text/css'/>
+
+
+<h1 style="font-size: xx-large;">Social Media Sharing</h1>
+
+<div class="notes">
+  <p>Refer to the article "<a href="https://codejson.blogspot.com" target="_blank">The Essential Meta Tags for Social Media</a>" that I wrote for CSS-Tricks. There you will find a detailed discussion of which <code>META</code> tags are necessary to optimize a page for sharing on social media.</p>
+</div>
+
+<h2>Web Page Information</h2>
+
+<table class="meta-table">
+  <tr>
+    <td><label for="mt-title">Page Title:</label></td>
+    <td><input type="text" id="mt-title">(Essential)</td>
+  </tr>
+  <tr>
+    <td><label for="mt-description">Page Description:</label></td>
+    <td><input type="text" id="mt-description">(Essential)</td>
+  </tr>
+  <tr>
+    <td><label for="mt-pageurl">Page URL:</label></td>
+    <td><input type="text" id="mt-pageurl">(Essential)</td>
+  </tr>
+  <tr class="padding">
+    <td><label for="mt-imageurl">Image URL:</label></td>
+    <td><input type="text" id="mt-imageurl">(Essential)</td>
+  </tr>
+  <tr>
+    <td><label for="mt-site">Site Name:</label></td>
+    <td><input type="text" id="mt-site">(Recommended)</td>
+  </tr>
+  <tr class="padding">
+    <td><label for="mt-alt">Alt Image Text:</label></td>
+    <td><input type="text" id="mt-alt">(Recommended)</td>
+  </tr>
+  <tr>
+    <td><label for="mt-appid">Facebook App ID:</label></td>
+    <td><input type="text" id="mt-appid">(Only for Analytics)</td>
+  </tr>
+  <tr>
+    <td><label for="mt-username">Twitter Username:</label></td>
+    <td><input type="text" id="mt-username">(Only for Analytics)</td>
+  </tr>
+</table>
+
+<h2>Generated Meta Tags</h2>
+<textarea id="meta-tags"></textarea>
+<button>Copy to Clipboard</button>
+
+<script src='https://cdn.staticaly.com/gh/Fixlez/media/3d9dc575/CodeJSON/mtg.js' type='text/javascript'/></script>
