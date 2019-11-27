@@ -54,7 +54,7 @@ function PlayList(sIdPlayer, bStopOtherParam) {
   this.playChanson = function(oEvent) {
     var oItem = oEvent.currentTarget,
       sSound = oItem.getAttribute("data-sound"),
-      sUrl = "https://docs.google.com/uc?export=open&id=" + sSound;
+      sUrl = "https://docs.google.com/" + sSound;
     /* A vous de gérer la manière de recupere l'ur du son */
     this.stopOther();
     if (this.oChanson == oItem) {
